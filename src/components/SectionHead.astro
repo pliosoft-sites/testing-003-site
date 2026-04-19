@@ -1,0 +1,28 @@
+---
+interface Props {
+  kicker?: string;
+  title: string;
+}
+const { kicker, title } = Astro.props;
+---
+<header class="container section-head">
+  {kicker && <p class="eyebrow">{kicker}</p>}
+  <h2>{title}</h2>
+  {Astro.slots.has('default') && (
+    <div class="section-head__intro prose"><slot /></div>
+  )}
+</header>
+
+<style>
+  .section-head {
+    margin-top: var(--s-8);
+    margin-bottom: var(--s-4);
+  }
+  .section-head h2 {
+    margin: 0;
+  }
+  .section-head__intro {
+    margin-top: var(--s-3);
+    color: var(--ink-muted);
+  }
+</style>

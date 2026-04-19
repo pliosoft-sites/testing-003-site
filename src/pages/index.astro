@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHead from '../components/SectionHead.astro';
+import { SITE } from '../data/site';
+---
+<Base title={SITE.name}>
+  <section class="container hero">
+    <p class="eyebrow">Welcome</p>
+    <h1>{SITE.tagline}</h1>
+    <p class="lede">
+      Replace this with a paragraph or two about what you do, who you do it
+      for, and why someone reading this should get in touch.
+    </p>
+  </section>
+
+  <SectionHead kicker="What we offer" title="A short list of what we do." />
+  <div class="container prose">
+    <p>
+      Use this section to describe your services, products, or specialties.
+      Keep it concrete — visitors should leave with a clear sense of what
+      you'd do for them.
+    </p>
+  </div>
+
+  <SectionHead kicker="Get in touch" title="Have a project in mind?" />
+  <div class="container prose">
+    <p>
+      Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> and we'll get
+      back to you within a business day.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    padding-top: var(--s-9);
+    padding-bottom: var(--s-6);
+  }
+</style>

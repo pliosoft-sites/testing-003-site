@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+<Base title={`About — ${SITE.name}`}>
+  <section class="container hero">
+    <p class="eyebrow">About</p>
+    <h1>About {SITE.name}.</h1>
+    <p class="lede">
+      A paragraph or two about who you are, when you started, and what
+      you're trying to do. Plain English. No marketing-ese.
+    </p>
+  </section>
+
+  <div class="container prose">
+    <h2>What we believe</h2>
+    <p>
+      A few sentences of point of view. What's your take on your craft?
+      What do you do differently, and why?
+    </p>
+
+    <h2>Who's here</h2>
+    <p>
+      Briefly introduce the people behind the business. Names, roles,
+      maybe one personal detail each.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .hero { padding-top: var(--s-9); padding-bottom: var(--s-5); }
+</style>

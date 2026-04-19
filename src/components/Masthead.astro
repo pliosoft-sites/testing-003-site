@@ -1,0 +1,61 @@
+---
+import { SITE } from '../data/site';
+const path = Astro.url.pathname;
+const isCurrent = (p: string) =>
+  path === p || (p !== '/' && path.startsWith(p));
+---
+<header class="masthead">
+  <div class="container masthead__inner">
+    <a href="/" class="masthead__brand">{SITE.name}</a>
+    <nav class="masthead__nav" aria-label="Primary">
+      <a href="/" class={isCurrent('/') ? 'is-current' : ''}>Home</a>
+      <a href="/about/" class={isCurrent('/about') ? 'is-current' : ''}>About</a>
+      <a href="/contact/" class={isCurrent('/contact') ? 'is-current' : ''}>Contact</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: var(--s-5) 0;
+    background: var(--surface);
+  }
+  .masthead__inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--s-4);
+  }
+  .masthead__brand {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .masthead__brand:hover { color: var(--accent-strong); text-decoration: none; }
+  .masthead__nav {
+    display: flex;
+    gap: var(--s-6);
+  }
+  .masthead__nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    font-size: var(--fs-small);
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  }
+  .masthead__nav a:hover { color: var(--ink); }
+  .masthead__nav a.is-current {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+  @media (max-width: 540px) {
+    .masthead__nav { width: 100%; gap: var(--s-5); }
+  }
+</style>

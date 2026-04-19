@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+<Base title={`Contact — ${SITE.name}`}>
+  <section class="container hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch.</h1>
+    <p class="lede">
+      The fastest way to reach us is email. We reply within a business day.
+    </p>
+  </section>
+
+  <div class="container">
+    <dl class="facts">
+      {SITE.email && (
+        <>
+          <dt>Email</dt>
+          <dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd>
+        </>
+      )}
+      {SITE.phone && (
+        <>
+          <dt>Phone</dt>
+          <dd>{SITE.phone}</dd>
+        </>
+      )}
+      {(SITE.address || SITE.city) && (
+        <>
+          <dt>Address</dt>
+          <dd>{SITE.address}{SITE.address && SITE.city ? ', ' : ''}{SITE.city}</dd>
+        </>
+      )}
+    </dl>
+
+    {SITE.hours.length > 0 && (
+      <>
+        <h2>Hours</h2>
+        <dl class="facts">
+          {SITE.hours.map((h) => (
+            <>
+              <dt>{h.day}</dt>
+              <dd>{h.hours}</dd>
+            </>
+          ))}
+        </dl>
+      </>
+    )}
+  </div>
+</Base>
+
+<style>
+  .hero { padding-top: var(--s-9); padding-bottom: var(--s-5); }
+</style>

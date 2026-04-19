@@ -1,0 +1,53 @@
+/* ============================================================
+   Design tokens — change these to retheme the site.
+   ============================================================ */
+
+:root {
+  /* Two surface colors carry most of the visual weight. */
+  --surface:        #fafaf7;          /* page background, warm off-white */
+  --surface-elev:   #f3f0ea;          /* slightly raised cards/blocks */
+  --ink:            #1a1816;          /* body text */
+  --ink-muted:      #6e655e;          /* secondary text */
+  --rule:           rgba(26, 24, 22, 0.10);
+
+  /* Single accent color. Underlines, focus rings, hover states. */
+  --accent:         #6b5b47;          /* warm neutral; change me */
+  --accent-strong:  #4a3e30;
+
+  /* Typography. Two families, sensible scale. */
+  --font-display:   'Fraunces', Georgia, serif;
+  --font-body:      'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  --fs-eyebrow:     0.75rem;
+  --fs-small:       0.875rem;
+  --fs-body:        1.0625rem;
+  --fs-lede:        clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+  --fs-h3:          clamp(1.2rem, 1.05rem + 0.6vw, 1.5rem);
+  --fs-h2:          clamp(1.65rem, 1.35rem + 1.4vw, 2.25rem);
+  --fs-h1:          clamp(2rem, 1.5rem + 2.6vw, 3.25rem);
+
+  --lh-tight:       1.12;
+  --lh-snug:        1.25;
+  --lh-body:        1.6;
+
+  /* Spacing — every value is a multiple of 4. */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: 6rem;
+
+  /* Layout. */
+  --container:      960px;
+  --prose:          64ch;
+  --r-sm:           4px;
+  --r-md:           8px;
+
+  /* Motion — subtle, never delay-y. */
+  --dur:            180ms;
+  --ease:           cubic-bezier(0.2, 0.7, 0.2, 1);
+}

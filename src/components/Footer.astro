@@ -1,0 +1,44 @@
+---
+import { SITE } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__contact">
+      {SITE.email && <a href={`mailto:${SITE.email}`}>{SITE.email}</a>}
+      {SITE.phone && <span>· {SITE.phone}</span>}
+      {SITE.address && <span>· {SITE.address}{SITE.city ? `, ${SITE.city}` : ''}</span>}
+    </div>
+    {SITE.social.length > 0 && (
+      <div class="footer__social">
+        {SITE.social.map((s) => (
+          <a href={s.url} rel="me noopener">{s.label}</a>
+        ))}
+      </div>
+    )}
+    <div class="footer__small">© {year} {SITE.name}</div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--rule);
+    margin-top: var(--s-9);
+    padding: var(--s-6) 0 var(--s-7);
+    background: var(--surface);
+    font-size: var(--fs-small);
+    color: var(--ink-muted);
+  }
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    align-items: flex-start;
+  }
+  .footer__contact, .footer__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-3);
+  }
+  .footer__small { opacity: 0.75; font-size: 0.78rem; letter-spacing: 0.04em; }
+</style>
