@@ -17,7 +17,7 @@ export interface SocialLink {
 
 export const SITE = {
   /** The business name as it appears in the masthead, titles, footer. */
-  name: '[Your Business Name]',
+  name: "Testing 003",
 
   /** One-line description used in <meta description> and OpenGraph. */
   tagline: 'A short, plain-English description of what you do.',
